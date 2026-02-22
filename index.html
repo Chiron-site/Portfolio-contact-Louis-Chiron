@@ -71,6 +71,10 @@
 
         .contact-info {
             margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px; /* Espace entre les lignes et les boutons */
         }
 
         .contact-info p {
@@ -80,18 +84,26 @@
             color: rgba(255, 255, 255, 0.8);
         }
 
+        .button-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
         .email-link {
             display: inline-block;
-            margin-top: 20px;
             color: #2c3e50;
             background: #ffffff;
-            padding: 14px 35px;
+            padding: 14px 30px;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 0.8rem;
             font-weight: 600;
             letter-spacing: 2px;
             transition: all 0.3s ease;
+            border-radius: 2px;
         }
 
         .email-link:hover {
@@ -99,6 +111,13 @@
             color: #ffffff;
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Style spécifique pour le bouton secondaire si tu veux le différencier légèrement */
+        .card-link {
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid #ffffff;
         }
 
         .social-links {
@@ -135,6 +154,8 @@
         @media (max-width: 768px) {
             nav { gap: 15px; }
             .nav-link { font-size: 0.7rem; }
+            .button-group { flex-direction: column; width: 100%; }
+            .email-link { width: 100%; text-align: center; }
         }
     </style>
 </head>
@@ -157,13 +178,16 @@
         <div class="contact-box">
             <div class="contact-info">
                 <p>Une question ou un projet de collaboration ?</p>
-                <p>N'hésitez pas à m'envoyer un message.</p>
+                <p>N'hésitez pas à m'envoyer un mail.</p>
                 
-                <a href="mailto:louis_chiron@icloud.com" class="email-link">Envoyer un mail</a>
+                <div class="button-group">
+                    <a href="mailto:louis_chiron@icloud.com" class="email-link">Envoyer un mail</a>
+                    <a href="https://chiron-site.github.io/Portfolio-contact-carte-Louis-Chiron/" class="email-link card-link">Ma Carte </a>
+                </div>
             </div>
 
             <div class="social-links">
-                <a href="https://www.instagram.com/i_got_it_picture/" target="_blank">Instagram</a>
+                <a href="https://www.instagram.com/chiron.louis/" target="_blank">Instagram</a>
                 <a href="https://www.youtube.com/channel/UC_sBheo_TxHa7WUK301RWgg" target="_blank">YouTube</a>
                 <a href="https://fr.linkedin.com/in/louis-chiron-6b1ab6296" target="_blank">LinkedIn</a>
             </div>
