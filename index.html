@@ -70,6 +70,7 @@
             overflow: hidden;
             border: 2px solid rgba(255, 255, 255, 0.2);
             margin: 0 auto 30px auto;
+            animation: floatSoft 4s ease-in-out infinite;
         }
 
         .profile-img {
@@ -152,6 +153,13 @@
             color: #3498db;
         }
 
+        /* Animation flottante légère */
+        @keyframes floatSoft {
+            0%   { transform: translateY(0px); }
+            50%  { transform: translateY(-6px); }
+            100% { transform: translateY(0px); }
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
@@ -188,7 +196,6 @@
     <div class="contact-container">
         <h2>Me Contacter</h2>
 
-        <!-- IMAGE AU DESSUS DU RECTANGLE -->
         <div class="profile-wrapper">
             <img src="https://new.express.adobe.com/webpage/TsLCb6f4qSFm9/resources/12698685-0282-423d-9a2b-ee50758fb853-img_5165_jpe?asset_id=27f41b39-a1e3-42d4-b1d2-f637a9bcea0a&img_etag=%2225d55fa965a34515ab03a92c42bc6e3b%22&image_assets=false&size=1024" alt="Louis Chiron" class="profile-img">
         </div>
