@@ -104,7 +104,33 @@
 
   /* ===== CONTACT PAGE ===== */
   .contact-page {
+    position: relative;
     min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-page::before {
+    content: "";
+    position: absolute;
+    inset: -30px;
+    background-image:
+      linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
+      url(https://new.express.adobe.com/webpage/2SzPWQy4IAbXG/resources/79b613ee-3c30-4940-aebe-1c36f385f02a-img_7355_jpe?asset_id=fbc835ff-36fa-4e73-a1d6-c2ee5c0b9e01&img_etag=%222183ecc327234f47a368cc98e87a268b%22&image_assets=false&size=1024);
+    background-size: cover;
+    background-position: center;
+    filter: blur(14px);
+    transform: scale(1.1);
+    z-index: 0;
+  }
+
+  .contact-page-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
     padding: 200px 20px 100px;
     display: flex;
     flex-direction: column;
@@ -118,7 +144,7 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     line-height: 1;
-    color: #111;
+    color: #ffffff;
   }
 
   .contact-subtitle {
@@ -127,7 +153,7 @@
     font-weight: 300;
     letter-spacing: 0.35em;
     text-transform: uppercase;
-    color: #555;
+    color: rgba(255,255,255,0.8);
   }
 
   .contact-details {
@@ -156,13 +182,13 @@
     font-size: 10px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: #999;
+    color: rgba(255,255,255,0.65);
   }
 
   .contact-value {
     font-size: 17px;
     letter-spacing: 0.03em;
-    color: #111;
+    color: #ffffff;
     text-decoration: none;
   }
   a.contact-value:hover { text-decoration: underline; }
@@ -235,55 +261,57 @@
   </nav>
 
   <section class="contact-page">
-    <h1 class="contact-title">Contact</h1>
-    <p class="contact-subtitle">Disponible pour vos projets photo et sites web</p>
+    <div class="contact-page-content">
+      <h1 class="contact-title">Contact</h1>
+      <p class="contact-subtitle">Disponible pour vos projets photo et sites web</p>
 
-    <div class="contact-details">
-      <div class="contact-block">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2 2C10.5 19 4 12.5 4 6a2 2 0 0 1 2-3z" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/>
-          </svg>
+      <div class="contact-details">
+        <div class="contact-block">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2 2C10.5 19 4 12.5 4 6a2 2 0 0 1 2-3z" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="contact-label">Téléphone</span>
+          <a class="contact-value" href="tel:+33676823805">06 76 82 38 05</a>
         </div>
-        <span class="contact-label">Téléphone</span>
-        <a class="contact-value" href="tel:+33676823805">06 76 82 38 05</a>
+
+        <div class="contact-block">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="5" width="18" height="14" rx="2" stroke="#ffffff" stroke-width="1.6"/>
+              <path d="M4 6.5l8 6 8-6" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="contact-label">Email</span>
+          <a class="contact-value" href="mailto:i_got_it_picture@gmail.com">i_got_it_picture@gmail.com</a>
+        </div>
+
+        <div class="contact-block">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round"/>
+              <circle cx="12" cy="9" r="2.4" stroke="#ffffff" stroke-width="1.6"/>
+            </svg>
+          </div>
+          <span class="contact-label">Région</span>
+          <ul class="contact-regions-list">
+            <li class="contact-value">Pays de la Loire</li>
+            <li class="contact-value"></li>
+            <li class="contact-value"></li>
+          </ul>
+        </div>
       </div>
 
-      <div class="contact-block">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="3" y="5" width="18" height="14" rx="2" stroke="#111" stroke-width="1.6"/>
-            <path d="M4 6.5l8 6 8-6" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <span class="contact-label">Email</span>
-        <a class="contact-value" href="mailto:i_got_it_picture@gmail.com">i_got_it_picture@gmail.com</a>
-      </div>
-
-      <div class="contact-block">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/>
-            <circle cx="12" cy="9" r="2.4" stroke="#111" stroke-width="1.6"/>
-          </svg>
-        </div>
-        <span class="contact-label">Région</span>
-        <ul class="contact-regions-list">
-          <li class="contact-value">Pays de la Loire</li>
-          <li class="contact-value"></li>
-          <li class="contact-value"></li>
-        </ul>
-      </div>
+      <a class="contact-insta" href="https://www.instagram.com/i_got_it_picture/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="20" height="20" rx="6" stroke="#fff" stroke-width="1.8"/>
+          <circle cx="12" cy="12" r="5" stroke="#fff" stroke-width="1.8"/>
+          <circle cx="17.6" cy="6.4" r="1.2" fill="#fff"/>
+        </svg>
+        Instagram
+      </a>
     </div>
-
-    <a class="contact-insta" href="https://www.instagram.com/i_got_it_picture/" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="2" y="2" width="20" height="20" rx="6" stroke="#111" stroke-width="1.8"/>
-        <circle cx="12" cy="12" r="5" stroke="#111" stroke-width="1.8"/>
-        <circle cx="17.6" cy="6.4" r="1.2" fill="#111"/>
-      </svg>
-      Instagram
-    </a>
   </section>
 
   <script>
