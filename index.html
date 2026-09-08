@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Louis — Contact</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='8'%20fill='%23111111'/%3E%3Cg%20fill='none'%20stroke='%23ffffff'%20stroke-width='5.5'%3E%3Cpath%20d='M14.5%2021v22h12'/%3E%3Cpath%20d='M47.2%2026.3a8%208%200%201%200%200%2011.3'/%3E%3C/g%3E%3C/svg%3E">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -242,7 +243,7 @@
       </svg>
     </a>
 
-    <a href="louis-accueil.html" class="site-logo">louis</a>
+    <a href="https://websites07.github.io/Louis.Chiron-Portfolio-Accueil/" class="site-logo">louis</a>
 
     <button class="burger-btn" id="burgerBtn" aria-label="Menu">
       <span></span>
@@ -255,7 +256,8 @@
     <ul>
       <li><a href="https://websites07.github.io/Louis.Chiron-Portfolio-Accueil/" class="nav-link" target="_self">Accueil</a></li>
       <li><a href="https://websites07.github.io/Louis.Chiron-Portfolio-Photographie/" class="nav-link" target="_self">Photographie</a></li>
-      <li><a href="https://websites07.github.io/Louis.Chiron-Portfolio-Web/" class="nav-link" target="_self">Sites Web</a></li>
+      <li><a href="louis-sport.html" class="nav-link" target="_self">Photos sportive</a></li>
+      <li><a href="https://websites07.github.io/Louis-Chiron-Portfolio-Mariage/" class="nav-link" target="_self">Photos de mariage</a></li>
       <li><a href="https://websites07.github.io/Louis.Chiron-Portfolio-Contact/" class="nav-link" target="_self">Contact</a></li>
     </ul>
   </nav>
@@ -322,7 +324,27 @@
     document.querySelectorAll('.nav-link').forEach(a => {
       a.addEventListener('click', () => document.body.classList.remove('menu-open'));
     });
-  </script>
+  
+  /* ── Protection du contenu ── */
+  /* Raccourcis qui ouvrent les outils de developpement ou enregistrent la page.
+     Garde-fou volontairement discret : il decourage le geste reflexe, il
+     n'empeche pas d'ouvrir l'inspecteur par le menu du navigateur. */
+  const OUTILS  = ['i','j','c','k','e','m'];  /* inspecteur, console, debogueur */
+  const FICHIER = ['s','u','p'];              /* enregistrer, source, imprimer */
+  document.addEventListener('keydown', e => {
+    const k = (e.key || '').toLowerCase();
+    const mod = e.ctrlKey || e.metaKey;
+    if (e.key === 'F12' || e.keyCode === 123 || e.key === 'PrintScreen' ||
+        (mod && e.shiftKey && OUTILS.includes(k)) ||
+        (mod && e.altKey   && OUTILS.includes(k)) ||   /* variantes macOS */
+        (mod && !e.shiftKey && !e.altKey && FICHIER.includes(k))) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }, true);
+</script>
 
 </body>
 </html>
+
+
